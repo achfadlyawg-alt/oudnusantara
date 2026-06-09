@@ -9,381 +9,184 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --brown:    #5C3317;
-      --brown2:   #7D4F30;
-      --gold:     #C9A84C;
-      --cream:    #F5EFE6;
-      --sand:     #EDE0CE;
-      --text:     #3A2210;
-      --muted:    #7D6149;
-      --white:    #FFFFFF;
+      --brown: #5C3317; --brown2: #7D4F30; --gold: #C9A84C;
+      --cream: #F5EFE6; --sand: #EDE0CE; --text: #3A2210; --muted: #7D6149;
     }
-
     html { scroll-behavior: smooth; }
     body { font-family: 'Montserrat', sans-serif; background: var(--cream); color: var(--text); }
-
     a { text-decoration: none; color: inherit; }
 
-    /* ─── DUBAI BANNER ─── */
+    /* DUBAI BANNER */
     .dubai-banner {
-      background: var(--brown);
-      color: var(--cream);
-      text-align: center;
-      padding: 10px 20px;
-      font-size: 13px;
-      letter-spacing: 1.5px;
-      line-height: 1.8;
+      background: var(--brown); color: var(--cream);
+      text-align: center; padding: 10px 20px;
+      font-size: 13px; letter-spacing: 1.5px; line-height: 2;
     }
     .dubai-banner a { color: var(--gold); font-weight: 600; }
-    .dubai-banner .arabic { font-size: 13px; direction: rtl; }
 
-    /* ─── TICKER ─── */
-    .ticker-wrap {
-      background: var(--gold);
-      overflow: hidden;
-      padding: 8px 0;
-    }
+    /* TICKER */
+    .ticker-wrap { background: var(--gold); overflow: hidden; padding: 8px 0; }
     .ticker {
-      display: flex;
-      white-space: nowrap;
-      animation: ticker 28s linear infinite;
-      font-size: 11px;
-      letter-spacing: 3px;
-      color: var(--brown);
-      font-weight: 600;
+      display: flex; white-space: nowrap;
+      animation: ticker 32s linear infinite;
+      font-size: 11px; letter-spacing: 3px; color: var(--brown); font-weight: 600;
     }
-    .ticker span { padding: 0 40px; }
+    .ticker span { padding: 0 36px; }
     @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-    /* ─── NAV ─── */
+    /* NAV */
     nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(245,239,230,0.97);
-      backdrop-filter: blur(8px);
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(245,239,230,0.97); backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--sand);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      display: flex; align-items: center; justify-content: space-between;
       padding: 18px 60px;
     }
-    .nav-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
-      font-weight: 600;
-      color: var(--brown);
-      letter-spacing: 2px;
-    }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--brown); letter-spacing: 2px; }
     .nav-logo span { color: var(--gold); }
     .nav-links { display: flex; gap: 36px; }
-    .nav-links a {
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--muted);
-      font-weight: 500;
-      transition: color 0.2s;
-    }
+    .nav-links a { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); font-weight: 500; transition: color .2s; }
     .nav-links a:hover { color: var(--brown); }
-    .nav-cta {
-      background: var(--brown);
-      color: var(--cream) !important;
-      padding: 10px 24px;
-      font-size: 11px !important;
-      letter-spacing: 2px;
-    }
-    .nav-cta:hover { background: var(--brown2) !important; color: var(--cream) !important; }
+    .nav-cta { background: var(--brown) !important; color: var(--cream) !important; padding: 10px 24px; }
+    .nav-cta:hover { background: var(--brown2) !important; }
 
-    /* ─── HERO ─── */
+    /* HERO */
     .hero {
-      min-height: 92vh;
+      min-height: 94vh;
       background: linear-gradient(160deg, #1a0a02 0%, #3d1c08 40%, #5C3317 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 80px 40px;
-      position: relative;
-      overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 80px 40px; position: relative; overflow: hidden;
     }
     .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 60% 40%, rgba(201,168,76,0.12) 0%, transparent 65%);
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 60% 40%, rgba(201,168,76,.12) 0%, transparent 65%);
     }
-    .hero-inner { position: relative; max-width: 780px; }
-    .hero-tag {
-      font-size: 11px;
-      letter-spacing: 5px;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 24px;
-      font-weight: 500;
-    }
-    .hero h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(48px, 8vw, 88px);
-      font-weight: 300;
-      color: var(--cream);
-      line-height: 1.05;
-      margin-bottom: 20px;
-    }
+    .hero-inner { position: relative; max-width: 800px; }
+    .hero-tag { font-size: 11px; letter-spacing: 5px; color: var(--gold); text-transform: uppercase; margin-bottom: 24px; font-weight: 500; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(48px,8vw,88px); font-weight: 300; color: var(--cream); line-height: 1.05; margin-bottom: 20px; }
     .hero h1 em { font-style: italic; color: var(--gold); }
-    .hero-arabic {
-      font-size: 22px;
-      color: rgba(245,239,230,0.55);
-      margin-bottom: 40px;
-      direction: rtl;
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-    }
-    .hero-desc {
-      font-size: 14px;
-      color: rgba(245,239,230,0.7);
-      letter-spacing: 1px;
-      line-height: 1.9;
-      max-width: 520px;
-      margin: 0 auto 48px;
-    }
+    .hero-arabic { font-size: 22px; color: rgba(245,239,230,.55); margin-bottom: 40px; direction: rtl; font-family: 'Cormorant Garamond', serif; font-style: italic; }
+    .hero-desc { font-size: 14px; color: rgba(245,239,230,.7); letter-spacing: 1px; line-height: 1.9; max-width: 520px; margin: 0 auto 48px; }
     .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-    .btn-gold {
-      background: var(--gold);
-      color: var(--brown);
-      padding: 16px 40px;
-      font-size: 12px;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      font-weight: 600;
-      transition: opacity 0.2s;
-    }
-    .btn-gold:hover { opacity: 0.88; }
-    .btn-outline {
-      border: 1px solid rgba(245,239,230,0.4);
-      color: var(--cream);
-      padding: 16px 40px;
-      font-size: 12px;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      font-weight: 500;
-      transition: border-color 0.2s;
-    }
+    .btn-gold { background: var(--gold); color: var(--brown); padding: 16px 40px; font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 600; transition: opacity .2s; }
+    .btn-gold:hover { opacity: .88; }
+    .btn-outline { border: 1px solid rgba(245,239,230,.4); color: var(--cream); padding: 16px 40px; font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 500; transition: border-color .2s; }
     .btn-outline:hover { border-color: var(--gold); }
 
-    /* ─── SECTION BASE ─── */
+    /* SECTIONS */
     section { padding: 90px 60px; }
-    .section-tag {
-      font-size: 11px;
-      letter-spacing: 5px;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 16px;
-      font-weight: 500;
-    }
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(32px, 4vw, 52px);
-      font-weight: 400;
-      color: var(--brown);
-      margin-bottom: 20px;
-      line-height: 1.15;
-    }
-    .section-sub {
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.9;
-      max-width: 600px;
-    }
+    .section-tag { font-size: 11px; letter-spacing: 5px; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; font-weight: 500; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(32px,4vw,52px); font-weight: 400; color: var(--brown); margin-bottom: 20px; line-height: 1.15; }
+    .section-sub { font-size: 14px; color: var(--muted); line-height: 1.9; max-width: 600px; }
 
-    /* ─── HERITAGE ─── */
-    .heritage {
-      background: var(--brown);
-      color: var(--cream);
-      text-align: center;
+    /* PHOTO GALLERY — HERO PRODUCT SHOWCASE */
+    .gallery { background: #1a0a02; padding: 0; overflow: hidden; }
+    .gallery-strip { display: flex; gap: 0; }
+    .gallery-strip img {
+      flex: 1; min-width: 0; height: 380px;
+      object-fit: cover; object-position: center;
+      filter: brightness(.85) saturate(1.1);
+      transition: flex .4s ease, filter .3s;
     }
+    .gallery-strip img:hover { flex: 2.5; filter: brightness(1) saturate(1.2); }
+
+    /* HERITAGE */
+    .heritage { background: var(--brown); color: var(--cream); text-align: center; }
     .heritage .section-title { color: var(--cream); }
-    .heritage .section-sub { color: rgba(245,239,230,0.7); margin: 0 auto; }
-    .heritage-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 48px;
-      margin-top: 60px;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+    .heritage .section-sub { color: rgba(245,239,230,.7); margin: 0 auto; }
+    .heritage-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 48px; margin-top: 60px; max-width: 900px; margin-left: auto; margin-right: auto; }
     .heritage-item { text-align: center; }
     .heritage-icon { font-size: 28px; margin-bottom: 16px; }
-    .heritage-item h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 20px;
-      font-weight: 400;
-      color: var(--gold);
-      margin-bottom: 10px;
-    }
-    .heritage-item p { font-size: 13px; color: rgba(245,239,230,0.65); line-height: 1.8; }
+    .heritage-item h3 { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: var(--gold); margin-bottom: 10px; }
+    .heritage-item p { font-size: 13px; color: rgba(245,239,230,.65); line-height: 1.8; }
 
-    /* ─── COLLECTION ─── */
+    /* COLLECTION GRID WITH REAL PHOTOS */
     .collection { background: var(--cream); }
-    .collection-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 32px;
-      margin-top: 56px;
-    }
-    .product-card {
-      background: var(--white);
-      border: 1px solid var(--sand);
-      transition: box-shadow 0.3s, transform 0.3s;
-    }
-    .product-card:hover { box-shadow: 0 12px 40px rgba(92,51,23,0.12); transform: translateY(-4px); }
+    .collection-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 24px; margin-top: 56px; }
+    .product-card { background: #fff; border: 1px solid var(--sand); transition: box-shadow .3s, transform .3s; overflow: hidden; }
+    .product-card:hover { box-shadow: 0 12px 40px rgba(92,51,23,.12); transform: translateY(-4px); }
     .product-img {
-      width: 100%;
-      aspect-ratio: 1;
+      width: 100%; aspect-ratio: 1; overflow: hidden;
       background: linear-gradient(135deg, #3d1c08, #7D4F30);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 48px;
+      display: flex; align-items: center; justify-content: center;
     }
+    .product-img img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+    .product-img .fallback { font-size: 48px; }
     .product-body { padding: 24px; }
-    .product-grade {
-      font-size: 10px;
-      letter-spacing: 3px;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-    .product-body h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
-      font-weight: 400;
-      color: var(--brown);
-      margin-bottom: 8px;
-    }
+    .product-grade { font-size: 10px; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; margin-bottom: 8px; }
+    .product-body h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--brown); margin-bottom: 8px; }
     .product-body p { font-size: 13px; color: var(--muted); line-height: 1.7; }
-    .product-cta {
-      display: inline-block;
-      margin-top: 18px;
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--brown);
-      border-bottom: 1px solid var(--gold);
-      padding-bottom: 2px;
-    }
+    .product-cta { display: inline-block; margin-top: 18px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--brown); border-bottom: 1px solid var(--gold); padding-bottom: 2px; }
 
-    /* ─── FOR COLLECTORS ─── */
-    .for-collectors {
-      background: var(--sand);
-      text-align: center;
-    }
+    /* FOR COLLECTORS */
+    .for-collectors { background: var(--sand); text-align: center; }
     .for-collectors .section-sub { margin: 0 auto 40px; }
-    .collectors-divider {
-      width: 60px;
-      height: 1px;
-      background: var(--gold);
-      margin: 24px auto;
-    }
+    .collectors-divider { width: 60px; height: 1px; background: var(--gold); margin: 24px auto; }
 
-    /* ─── PROCESS ─── */
-    .process { background: var(--white); }
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 40px;
-      margin-top: 56px;
+    /* SINKING WOOD — PROOF SECTION */
+    .proof { background: #fff; }
+    .proof-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .proof-img { overflow: hidden; }
+    .proof-img img { width: 100%; height: 480px; object-fit: cover; object-position: center; display: block; }
+    .proof-img .fallback-img {
+      width: 100%; height: 480px;
+      background: linear-gradient(135deg, #1a0a02, #5C3317);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 80px;
     }
+    .proof-text .section-tag { text-align: left; }
+    .proof-text .section-title { text-align: left; }
+    .proof-text .section-sub { text-align: left; }
+    .proof-point { display: flex; gap: 16px; align-items: flex-start; margin-top: 24px; }
+    .proof-point-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+    .proof-point-text h4 { font-size: 13px; font-weight: 600; color: var(--brown); margin-bottom: 4px; letter-spacing: 1px; }
+    .proof-point-text p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+    /* PROCESS */
+    .process { background: var(--cream); }
+    .process-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 40px; margin-top: 56px; }
     .process-step { text-align: center; }
-    .step-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 48px;
-      font-weight: 300;
-      color: var(--sand);
-      line-height: 1;
-      margin-bottom: 12px;
-    }
-    .process-step h4 {
-      font-size: 13px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--brown);
-      margin-bottom: 8px;
-    }
+    .step-num { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 300; color: var(--sand); line-height: 1; margin-bottom: 12px; }
+    .process-step h4 { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--brown); margin-bottom: 8px; }
     .process-step p { font-size: 13px; color: var(--muted); line-height: 1.7; }
 
-    /* ─── CTA SECTION ─── */
-    .cta-section {
-      background: var(--brown);
-      text-align: center;
-    }
+    /* CTA */
+    .cta-section { background: var(--brown); text-align: center; }
     .cta-section .section-title { color: var(--cream); }
-    .cta-section .section-sub { color: rgba(245,239,230,0.7); margin: 0 auto 48px; }
+    .cta-section .section-sub { color: rgba(245,239,230,.7); margin: 0 auto 48px; }
     .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-    .btn-cream {
-      background: var(--cream);
-      color: var(--brown);
-      padding: 16px 40px;
-      font-size: 12px;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      font-weight: 600;
-      transition: opacity 0.2s;
-    }
-    .btn-cream:hover { opacity: 0.88; }
+    .btn-cream { background: var(--cream); color: var(--brown); padding: 16px 40px; font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 600; transition: opacity .2s; }
+    .btn-cream:hover { opacity: .88; }
 
-    /* ─── FOOTER ─── */
-    footer {
-      background: #180a02;
-      color: rgba(245,239,230,0.6);
-      padding: 60px;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1.5fr;
-      gap: 48px;
-      margin-bottom: 48px;
-    }
+    /* FOOTER */
+    footer { background: #180a02; color: rgba(245,239,230,.6); padding: 60px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 48px; margin-bottom: 48px; }
     .footer-brand .nav-logo { font-size: 20px; margin-bottom: 16px; display: block; }
     .footer-brand p { font-size: 13px; line-height: 1.8; max-width: 280px; }
-    .footer-col h4 {
-      font-size: 10px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 20px;
-    }
+    .footer-col h4 { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
     .footer-col ul { list-style: none; }
     .footer-col ul li { margin-bottom: 10px; }
-    .footer-col ul li a { font-size: 13px; color: rgba(245,239,230,0.6); transition: color 0.2s; }
+    .footer-col ul li a { font-size: 13px; color: rgba(245,239,230,.6); transition: color .2s; }
     .footer-col ul li a:hover { color: var(--cream); }
-    .footer-contact p { font-size: 13px; line-height: 2; }
+    .footer-contact p { font-size: 13px; line-height: 2.1; }
     .footer-contact a { color: var(--gold); }
-    .footer-bottom {
-      border-top: 1px solid rgba(245,239,230,0.1);
-      padding-top: 24px;
-      font-size: 12px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+    .footer-bottom { border-top: 1px solid rgba(245,239,230,.1); padding-top: 24px; font-size: 12px; display: flex; justify-content: space-between; align-items: center; }
 
-    /* ─── RESPONSIVE ─── */
+    /* RESPONSIVE */
     @media (max-width: 900px) {
-      nav { padding: 16px 24px; }
-      .nav-links { display: none; }
+      nav { padding: 16px 24px; } .nav-links { display: none; }
       section { padding: 60px 24px; }
       .heritage-grid, .process-grid { grid-template-columns: 1fr; gap: 32px; }
+      .proof-inner { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
       footer { padding: 40px 24px; }
+      .gallery-strip { flex-direction: column; }
+      .gallery-strip img { height: 240px; flex: none; }
     }
     @media (max-width: 600px) {
       .hero { padding: 60px 24px; }
-      .hero-btns { flex-direction: column; align-items: center; }
-      .cta-btns { flex-direction: column; align-items: center; }
+      .hero-btns, .cta-btns { flex-direction: column; align-items: center; }
       .footer-grid { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
     }
@@ -391,35 +194,28 @@
 </head>
 <body>
 
-  <!-- ─── DUBAI BANNER ─── -->
+  <!-- DUBAI BANNER -->
   <div class="dubai-banner">
     🌿 Now in Dubai with exclusive wild agarwood stock &nbsp;|&nbsp;
     Contact directly: <a href="tel:+971559611116">+971 55 961 1116</a> &nbsp;|&nbsp; @akhpall
-    <br class="arabic" />
-    <span class="arabic">متاح الآن في دبي — للاستفسار: <a href="tel:+971559611116">1116 961 55 971+</a></span>
+    <br /><span style="direction:rtl;display:block;font-size:13px;">
+      متاح الآن في دبي — للاستفسار: <a href="tel:+971559611116">1116 961 55 971+</a>
+    </span>
   </div>
 
-  <!-- ─── TICKER ─── -->
-  <div class="ticker-wrap">
-    <div class="ticker">
-      <span>BORNEO</span><span>✦</span>
-      <span>TRIPLE SUPER GRADE</span><span>✦</span>
-      <span>عود بورنيو الملكي</span><span>✦</span>
-      <span>WILD HARVESTED</span><span>✦</span>
-      <span>GCC CERTIFIED</span><span>✦</span>
-      <span>PURE DAHN AL OUD</span><span>✦</span>
-      <span>PRIVATE COLLECTORS ONLY</span><span>✦</span>
-      <span>BORNEO</span><span>✦</span>
-      <span>TRIPLE SUPER GRADE</span><span>✦</span>
-      <span>عود بورنيو الملكي</span><span>✦</span>
-      <span>WILD HARVESTED</span><span>✦</span>
-      <span>GCC CERTIFIED</span><span>✦</span>
-      <span>PURE DAHN AL OUD</span><span>✦</span>
-      <span>PRIVATE COLLECTORS ONLY</span><span>✦</span>
-    </div>
-  </div>
+  <!-- TICKER -->
+  <div class="ticker-wrap"><div class="ticker">
+    <span>BORNEO</span><span>✦</span><span>TRIPLE SUPER GRADE</span><span>✦</span>
+    <span>عود بورنيو الملكي</span><span>✦</span><span>WILD HARVESTED</span><span>✦</span>
+    <span>GCC CERTIFIED</span><span>✦</span><span>PURE DAHN AL OUD</span><span>✦</span>
+    <span>PRIVATE COLLECTORS ONLY</span><span>✦</span>
+    <span>BORNEO</span><span>✦</span><span>TRIPLE SUPER GRADE</span><span>✦</span>
+    <span>عود بورنيو الملكي</span><span>✦</span><span>WILD HARVESTED</span><span>✦</span>
+    <span>GCC CERTIFIED</span><span>✦</span><span>PURE DAHN AL OUD</span><span>✦</span>
+    <span>PRIVATE COLLECTORS ONLY</span><span>✦</span>
+  </div></div>
 
-  <!-- ─── NAV ─── -->
+  <!-- NAV -->
   <nav>
     <div class="nav-logo">OUD <span>NUSANTARA</span></div>
     <div class="nav-links">
@@ -430,16 +226,13 @@
     </div>
   </nav>
 
-  <!-- ─── HERO ─── -->
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
       <p class="hero-tag">Royal Borneo · Wild Agarwood · Dubai</p>
       <h1>Royal<br /><em>Nusantara</em><br />Oud</h1>
       <p class="hero-arabic">عود بورنيو الملكي الأصيل — للروح والحضارة</p>
-      <p class="hero-desc">
-        The rarest wild agarwood from the ancient forests of Royal Borneo.
-        Sourced, selected, and presented personally — in Dubai, right now.
-      </p>
+      <p class="hero-desc">The rarest wild agarwood from the ancient forests of Royal Borneo. Sourced, selected, and presented personally — in Dubai, right now.</p>
       <div class="hero-btns">
         <a href="https://wa.me/971559611116" class="btn-gold">WhatsApp Us</a>
         <a href="#collection" class="btn-outline">View Collection</a>
@@ -447,14 +240,22 @@
     </div>
   </section>
 
-  <!-- ─── HERITAGE ─── -->
+  <!-- PHOTO GALLERY STRIP -->
+  <div class="gallery">
+    <div class="gallery-strip">
+      <img src="images/IMG_5434.jpg" alt="Wild agarwood sinking test — resin density proof" />
+      <img src="images/IMG_5329.jpg" alt="Premium Borneo agarwood sticks" />
+      <img src="images/IMG_5298.jpg" alt="Triple super grade agarwood collection" />
+      <img src="images/IMG_5270.jpg" alt="Wild harvested agarwood chips" />
+      <img src="images/IMG_5269.jpg" alt="Royal Borneo agarwood selection" />
+    </div>
+  </div>
+
+  <!-- HERITAGE -->
   <section class="heritage" id="heritage">
     <p class="section-tag">Our Origin</p>
     <h2 class="section-title">From the Heart of Royal Borneo</h2>
-    <p class="section-sub">
-      Each piece carries the soul of an ancient forest. Wild-harvested, never farmed.
-      Authenticated and brought directly to discerning collectors in the Gulf.
-    </p>
+    <p class="section-sub">Each piece carries the soul of an ancient forest. Wild-harvested, never farmed. Authenticated and brought directly to discerning collectors in the Gulf.</p>
     <div class="heritage-grid">
       <div class="heritage-item">
         <div class="heritage-icon">🌿</div>
@@ -474,14 +275,18 @@
     </div>
   </section>
 
-  <!-- ─── COLLECTION ─── -->
+  <!-- COLLECTION -->
   <section class="collection" id="collection">
     <p class="section-tag">Our Collection</p>
     <h2 class="section-title">Select Pieces, Limited Stock</h2>
     <p class="section-sub">Each item is available in strictly limited quantities. Inquire directly for current availability and pricing.</p>
     <div class="collection-grid">
+
       <div class="product-card">
-        <div class="product-img">🪵</div>
+        <div class="product-img">
+          <img src="images/IMG_5329.jpg" alt="Wild Borneo agarwood chips — Triple Super Grade" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <span class="fallback" style="display:none">🪵</span>
+        </div>
         <div class="product-body">
           <p class="product-grade">Triple Super Grade</p>
           <h3>Agarwood Chips</h3>
@@ -489,94 +294,122 @@
           <a href="https://wa.me/971559611116" class="product-cta">Inquire →</a>
         </div>
       </div>
+
       <div class="product-card">
-        <div class="product-img">🫙</div>
+        <div class="product-img">
+          <img src="images/IMG_5298.jpg" alt="Premium agarwood selection" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <span class="fallback" style="display:none">🪵</span>
+        </div>
         <div class="product-body">
-          <p class="product-grade">Pure · Unblended</p>
-          <h3>Dahn Al Oud Oil</h3>
-          <p>Distilled from premium wild agarwood. No fillers, no synthetics — pure Borneo essence.</p>
+          <p class="product-grade">Super Grade · Wild</p>
+          <h3>Premium Sticks</h3>
+          <p>Long-form agarwood pieces with visible resin lines. Ideal for direct heating and collection display.</p>
           <a href="https://wa.me/971559611116" class="product-cta">Inquire →</a>
         </div>
       </div>
+
       <div class="product-card">
-        <div class="product-img">✨</div>
+        <div class="product-img">
+          <img src="images/IMG_5270.jpg" alt="Agarwood chips collection" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <span class="fallback" style="display:none">✨</span>
+        </div>
         <div class="product-body">
-          <p class="product-grade">Artisan Blend</p>
-          <h3>Bukhoor Powder</h3>
-          <p>Traditional Nusantara bukhoor blended with natural resins. Deep, ceremonial fragrance.</p>
+          <p class="product-grade">Mixed Grade Selection</p>
+          <h3>Collector's Mix</h3>
+          <p>A curated selection of varying grades — perfect for the collector who appreciates the full spectrum of Borneo oud.</p>
           <a href="https://wa.me/971559611116" class="product-cta">Inquire →</a>
         </div>
       </div>
+
       <div class="product-card">
-        <div class="product-img">🎁</div>
+        <div class="product-img">
+          <img src="images/IMG_4147.jpg" alt="Unique agarwood piece" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <span class="fallback" style="display:none">🎁</span>
+        </div>
         <div class="product-body">
-          <p class="product-grade">Collector Edition</p>
-          <h3>Curated Gift Sets</h3>
-          <p>Handpicked combinations presented in premium packaging. Ideal for gifting or personal collection.</p>
+          <p class="product-grade">Rare Collector Piece</p>
+          <h3>Unique Form</h3>
+          <p>Naturally formed agarwood with exceptional character. One of a kind — for the serious collector.</p>
           <a href="https://wa.me/971559611116" class="product-cta">Inquire →</a>
         </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROOF — SINKING TEST -->
+  <section class="proof">
+    <div class="proof-inner">
+      <div class="proof-img">
+        <img src="images/IMG_5434.jpg" alt="Agarwood sinking in water — proof of exceptional resin density" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+        <div class="fallback-img" style="display:none">🪵</div>
+      </div>
+      <div class="proof-text">
+        <p class="section-tag">The Proof</p>
+        <h2 class="section-title">It Sinks.<br />That's How You Know.</h2>
+        <p class="section-sub">The ultimate test of premium agarwood is the water sink test. Dense resin content causes genuine high-grade oud to sink. Our wood passes every time.</p>
+        <div class="proof-point">
+          <div class="proof-point-icon">💧</div>
+          <div class="proof-point-text">
+            <h4>Water Sink Test</h4>
+            <p>High resin density is what creates both the exceptional fragrance and the weight that causes it to sink.</p>
+          </div>
+        </div>
+        <div class="proof-point">
+          <div class="proof-point-icon">🌿</div>
+          <div class="proof-point-text">
+            <h4>Wild, Not Farmed</h4>
+            <p>Plantation agarwood rarely achieves this density. Wild forest growth over decades produces the real thing.</p>
+          </div>
+        </div>
+        <div class="proof-point">
+          <div class="proof-point-icon">✦</div>
+          <div class="proof-point-text">
+            <h4>Personal Guarantee</h4>
+            <p>Every piece can be tested in person. I am in Dubai now — contact me to arrange a private viewing.</p>
+          </div>
+        </div>
+        <a href="https://wa.me/971559611116" style="display:inline-block;margin-top:32px;background:var(--brown);color:var(--cream);padding:14px 36px;font-size:12px;letter-spacing:2px;text-transform:uppercase;">
+          Arrange a Viewing
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ─── FOR COLLECTORS ─── -->
+  <!-- FOR COLLECTORS -->
   <section class="for-collectors" id="collectors">
     <p class="section-tag">For Collectors</p>
     <h2 class="section-title">Not for Traders.<br />For Connoisseurs.</h2>
     <div class="collectors-divider"></div>
-    <p class="section-sub">
-      Our pieces are selected for those who understand the difference between
-      agarwood and truly exceptional wild oud. Each collection is limited,
-      traceable to its forest origin in Royal Borneo, and available only
-      through direct personal inquiry — no bulk orders, no trading terms.
-    </p>
+    <p class="section-sub">Our pieces are selected for those who understand the difference between agarwood and truly exceptional wild oud. Each collection is limited, traceable to its forest origin in Royal Borneo, and available only through direct personal inquiry.</p>
     <br /><br />
     <a href="https://wa.me/971559611116" class="btn-gold">Request Private Viewing</a>
   </section>
 
-  <!-- ─── PROCESS ─── -->
+  <!-- PROCESS -->
   <section class="process">
     <p class="section-tag">From Forest to You</p>
     <h2 class="section-title">The Oud Nusantara Process</h2>
     <div class="process-grid">
-      <div class="process-step">
-        <div class="step-num">01</div>
-        <h4>Wild Selection</h4>
-        <p>Hand-selected from old-growth forests in Kalimantan by trusted local partners.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num">02</div>
-        <h4>Authentication</h4>
-        <p>Each piece is graded and verified for resin density, scent profile, and forest origin.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num">03</div>
-        <h4>Direct Presentation</h4>
-        <p>Brought personally to Dubai — no intermediaries, no compromise on quality.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num">04</div>
-        <h4>Private Delivery</h4>
-        <p>Arranged directly with the collector. Discreet, personal, and across the UAE & GCC.</p>
-      </div>
+      <div class="process-step"><div class="step-num">01</div><h4>Wild Selection</h4><p>Hand-selected from old-growth forests in Kalimantan by trusted local partners.</p></div>
+      <div class="process-step"><div class="step-num">02</div><h4>Authentication</h4><p>Each piece is graded and verified for resin density, scent profile, and forest origin.</p></div>
+      <div class="process-step"><div class="step-num">03</div><h4>Direct Presentation</h4><p>Brought personally to Dubai — no intermediaries, no compromise on quality.</p></div>
+      <div class="process-step"><div class="step-num">04</div><h4>Private Delivery</h4><p>Arranged directly with the collector. Discreet, personal, and across the UAE & GCC.</p></div>
     </div>
   </section>
 
-  <!-- ─── CTA ─── -->
+  <!-- CTA -->
   <section class="cta-section" id="contact">
     <p class="section-tag">Reserve Your Collection</p>
     <h2 class="section-title">Currently in Dubai.<br />Available Now.</h2>
-    <p class="section-sub">
-      Curated exclusively for private collectors. Contact us directly to arrange
-      a personal viewing or inquiry — Dubai &amp; Gulf.
-    </p>
+    <p class="section-sub">Curated exclusively for private collectors. Contact us directly to arrange a personal viewing or inquiry — Dubai &amp; Gulf.</p>
     <div class="cta-btns">
       <a href="https://wa.me/971559611116" class="btn-cream">WhatsApp: +971 55 961 1116</a>
       <a href="https://wa.me/6285101617845" class="btn-outline">WA Indonesia</a>
     </div>
   </section>
 
-  <!-- ─── FOOTER ─── -->
+  <!-- FOOTER -->
   <footer>
     <div class="footer-grid">
       <div class="footer-brand">
